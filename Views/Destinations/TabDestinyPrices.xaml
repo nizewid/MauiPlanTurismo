@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.Views.Destinations.TabDestinyPrices"
+             Title="Tab Destinos Precios">
+
+    <VerticalStackLayout Margin="0" BackgroundColor="Gainsboro">
+
+        <StackLayout Margin="30">
+
+            <Label Text="Precio Viaje"  FontSize="24"/>
+
+            <StackLayout Margin="20" HorizontalOptions="CenterAndExpand">
+                <Label Text="Adultos" FontSize="18" HorizontalOptions="CenterAndExpand" Margin="10"/>
+                <Label Text="90,00 €" BackgroundColor="#FFFFFF" TextColor="Fuchsia"  FontSize="20" WidthRequest="90" HeightRequest="90" Padding="20,0,0,0" VerticalTextAlignment="Center"/>
+            </StackLayout>
+
+            <StackLayout Margin="20" HorizontalOptions="CenterAndExpand">
+                <Label Text="Niños" FontSize="18" HorizontalOptions="CenterAndExpand" Margin="10"/>
+                <Label Text="40,00 €" BackgroundColor="#FFFFFF" TextColor="Fuchsia"  FontSize="20" WidthRequest="90" HeightRequest="90" Padding="20,0,0,0" VerticalTextAlignment="Center"/>
+            </StackLayout>
+
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

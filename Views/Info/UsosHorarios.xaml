@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.Views.Info.UsosHorarios"
+             Title="UsosHorarios">
+    <VerticalStackLayout>
+        <Label   Text="Consultar Husos Horarios" FontSize="Title" HorizontalOptions="Center" />
+
+        <StackLayout Margin="80,60,80,60">
+            <Button Text="Península" Clicked="Button_Clicked"  Margin="10" />
+            <Button Text="Canarias" Clicked="Button_Clicked" Margin="10"/>
+            <Button Text="Berlín" Clicked="Button_Clicked" Margin="10"/>
+            <Button Text="Nueva York" Clicked="Button_Clicked" Margin="10"/>
+            <Button Text="Los Ángeles" Clicked="Button_Clicked" Margin="10"/>
+            <Button Text="Tokio" Clicked="Button_Clicked" Margin="10"/>
+        </StackLayout>
+
+        <Label Text="" x:Name="lblHora" FontSize="Large" TextColor="Magenta" HorizontalOptions="Center"></Label>
+        <Image x:Name="imgBandera"/>
+
+    </VerticalStackLayout>
+</ContentPage>

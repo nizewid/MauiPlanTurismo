@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.MainPageFlyoutMenu"
+             xmlns:modelos="clr-namespace:MauiPlanTurismo.Models"
+             xmlns:local="clr-namespace:MauiPlanTurismo"
+             xmlns:destinos="clr-namespace:MauiPlanTurismo.Views.Destinations"
+             xmlns:info="clr-namespace:MauiPlanTurismo.Views.Info"
+             xmlns:user="clr-namespace:MauiPlanTurismo.Views.User"
+             Title="MainPageFlyoutMenu">
+
+    <CollectionView x:Name="collectionView"  x:FieldModifier="public"  SelectionMode="Single">
+
+        <CollectionView.ItemsSource>
+            <x:Array Type="{x:Type modelos:MenuItem}">
+                <modelos:MenuItem Titulo="Inicio" Icono="inicio_blue.png" TargetType="{x:Type local:MainPageFlyoutDetail}" />
+                <modelos:MenuItem Titulo="Destinos" Icono="destino.png" TargetType="{x:Type destinos:TabDestiny}" />
+                <modelos:MenuItem Titulo="Destino Granada" Icono="destino.png" TargetType="{x:Type destinos:GranadaPage}" />
+                <modelos:MenuItem Titulo="Tipos Destino" Icono="destino.png" TargetType="{x:Type destinos:TouristDestination}" />
+                <modelos:MenuItem Titulo="Usuario" Icono="usuario_fill.png" TargetType="{x:Type user:Register}" />
+                <modelos:MenuItem Titulo="Acerca de ..." Icono="info.png" TargetType="{x:Type info:InfoApp}" />
+            </x:Array>
+        </CollectionView.ItemsSource>
+
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Grid Padding="5,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="{Binding Icono}" />
+                    <Label Grid.Column="1" Margin="20,0" Text="{Binding Titulo}"
+                           FontSize="20" FontAttributes="Bold" VerticalOptions="Center" />
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+
+    </CollectionView>
+
+</ContentPage>

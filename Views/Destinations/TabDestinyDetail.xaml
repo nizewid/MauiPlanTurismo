@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.Views.Destinations.TabDestinyDetail"
+             Title="TabDestinosDetalle">
+
+    <VerticalStackLayout Margin="30">
+        <Label Text="Visitas programadas"  FontSize="24"/>
+
+        <StackLayout Margin="10">
+            <Label Text="Generalife" FontSize="18" />
+            <Image Source="granada_generalife.jpg" ></Image>
+            <Label Text="Vista de los jardines" BackgroundColor="#0277BD" TextColor="#FFFFFF"  AbsoluteLayout.LayoutBounds="45, 270, 150, 30" FontSize="16" />
+        </StackLayout>
+
+        <StackLayout Margin="10">
+            <Label Text="Alhambra" FontSize="18" />
+            <Image Source="granada_patio.jpg" ></Image>
+            <Label Text="Palacete exterior" BackgroundColor="#0277BD" TextColor="#FFFFFF"  AbsoluteLayout.LayoutBounds="45, 270, 150, 30" FontSize="16" />
+        </StackLayout>
+
+    </VerticalStackLayout>
+
+</ContentPage>

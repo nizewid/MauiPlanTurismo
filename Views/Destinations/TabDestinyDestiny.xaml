@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.Views.Destinations.TabDestinyDestiny"
+             Title="TabDestinosDestino">
+
+    <VerticalStackLayout Margin="30">
+        <Label Text="Granada" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" />
+        <Image Margin="0,20,0,0" Source="granada_pan_lejos.jpg" />
+        <Label Margin="0,20,0,0" Text="Granada situada en el sur de España dentro de la comunidad de Andalucía, con una población de 232.000 habitantes, cuenta con un importante patrimonio y recursos naturales. " FontSize="18"/>
+    </VerticalStackLayout>
+
+</ContentPage>

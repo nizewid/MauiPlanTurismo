@@ -1,0 +1,54 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.Views.Destinations.TouristDestination"
+             xmlns:converter="clr-namespace:MauiPlanTurismo.Converters"
+             Title="Destinos turísticos">
+
+    <ContentPage.Resources>
+        <converter:DestinoPremiunConverter x:Key="DestinoPremiunConverter" />
+    </ContentPage.Resources>
+
+    <CollectionView ItemsSource="{Binding Destinations}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Frame BorderColor="Gray" CornerRadius="10" Margin="10" Padding="10">
+                    <Grid Padding="5" ColumnDefinitions="100,*,Auto" RowDefinitions="Auto,Auto">
+                        <Image Source="{Binding Image}" Grid.RowSpan="2" Grid.Column="0" 
+                               Aspect="AspectFill" HeightRequest="80" WidthRequest="100" />
+
+                        <VerticalStackLayout Grid.Column="1" Grid.Row="0" Spacing="2">
+                            <Label Text="{Binding HotelName}" FontAttributes="Bold" FontSize="Medium" />
+                            <Label Text="{Binding City}" FontSize="Small" />
+                            <Label Text="{Binding Province}" FontSize="Small" />
+                        </VerticalStackLayout>
+
+                        <HorizontalStackLayout Grid.Row="0" Grid.Column="2" HorizontalOptions="End">
+                            <CheckBox IsEnabled="False">
+                                <CheckBox.IsChecked>
+                                    <MultiBinding Converter="{StaticResource DestinoPremiunConverter}">
+                                        <Binding Path="HasBeach" />
+                                        <Binding Path="HasPool" />
+                                        <Binding Path="IncludesBreakfast" />
+                                    </MultiBinding>
+                                </CheckBox.IsChecked>
+                            </CheckBox>
+                            <Label Text="Premium" VerticalOptions="Center" Margin="5,0,0,0" />
+                        </HorizontalStackLayout>
+
+                        <VerticalStackLayout Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Spacing="2">
+                            <Label Text="Tiene Playa" />
+                            <CheckBox IsChecked="{Binding HasBeach}" IsEnabled="False" />
+
+                            <Label Text="Tiene Piscina" />
+                            <CheckBox IsChecked="{Binding HasPool}" IsEnabled="False" />
+
+                            <Label Text="Incluye Desayuno" />
+                            <CheckBox IsChecked="{Binding IncludesBreakfast}" IsEnabled="False" />
+                        </VerticalStackLayout>
+
+                    </Grid>
+                </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>
