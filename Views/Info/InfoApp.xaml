@@ -4,7 +4,7 @@
              x:Class="MauiPlanTurismo.Views.Info.InfoApp"
              Title="Información Plan Turismo">
     <ScrollView>
-    <VerticalStackLayout BackgroundColor="#fff4e6">
+        <VerticalStackLayout x:Name="mainContainer" BackgroundColor="Thistle">
         <Image Source="logo_planesturismo.png" HorizontalOptions="Center" Margin="60"></Image>
         <Label Text="Agenda Turismo"  VerticalOptions="Center"  HorizontalOptions="Center" FontSize="Large" TextColor="#c2255c" FontAttributes="Bold" Margin="0,40,0,0" />
 
@@ -15,12 +15,14 @@
         <Label Text="- Alojamientos" VerticalOptions="Center"   FontSize="Medium" TextColor="#9C36B5" Margin="60,20,0,0"></Label>
         <Label Text="- Transportes" VerticalOptions="Center"  FontSize="Medium" TextColor="#9C36B5" Margin="60,20,0,0"></Label>
         <Label Text="- Calendario de viajes" VerticalOptions="Center"  FontSize="Medium" TextColor="#9C36B5" Margin="60,20,0,0"></Label>
-        
-        <Label Text="Utilidades" VerticalOptions="Center"  HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold" TextColor="#c2255c" Margin="0,20,0,20"></Label>
-            <Button x:Name="btnUsosHorarios"  Margin="0,10,0,0" Text="Ver Usos Horarios" Clicked="btnUsosHorarios_Clicked" HorizontalOptions="Center"></Button>
 
-        <Button x:Name="BtnRegister" Margin="0,10,0,0" Text="Registro" BackgroundColor="#9c36b5" SemanticProperties.Hint="Registro de usuario" Clicked="RegisterBtnClicked" HorizontalOptions="Center"/>
-            <Button x:Name="BtnShowTouristDestination"  Margin="0,10,0,0" Text="Ver Destinos" BackgroundColor="#9c36b5" SemanticProperties.Hint="Ver Destinos" Clicked="TouristDestinationsBtnClicked" HorizontalOptions="Center"/>
-    </VerticalStackLayout>
+            <Label Text="Utilidades"  FontSize="Large" FontAttributes="Bold" 
+               HeightRequest="{OnPlatform Default=30, iOS=35, Android=40}"
+               WidthRequest="{OnPlatform Default=200, iOS=250, Android=200}"
+               TextColor="{OnPlatform Default=Yellow, iOS=Red, Android=Green}"
+               BackgroundColor="{OnPlatform Default=Blue, iOS=White, Android=Black}"
+               Margin="0,20,0,20"></Label>
+
+        </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.Views.Options.DestinyListWithoutEnd"
+             xmlns:viewmodel="clr-namespace:MauiPlanTurismo.ViewModels"
+             Title="Endless Destination List">
+
+    <ContentPage.BindingContext>
+        <viewmodel:MultipleDestinationsViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <DataTemplate x:Key="DestinationTemplate">
+            <SwipeView>
+                <SwipeView.RightItems>
+                    <SwipeItems>
+                        <SwipeItem Text="Favorito" IconImageSource="estrella_bn.png" BackgroundColor="PaleGoldenrod" Invoked="OnFavoriteInvoked"/>
+                        <SwipeItem Text="Marcado" IconImageSource="marcar.png" BackgroundColor="LightBlue" Invoked="OnMarkInvoked"/>
+                        <SwipeItem Text="Descartado" IconImageSource="denegar.png" BackgroundColor="LightPink" Invoked="OnDismissInvoked"/>
+                    </SwipeItems>
+                </SwipeView.RightItems>
+
+                <Frame CornerRadius="5" BorderColor="LightSlateGray" BackgroundColor="WhiteSmoke" Margin="2">
+                    <Grid RowDefinitions="*, *" ColumnDefinitions="120, *">
+                        <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                               Source="{Binding Image}"
+                               HorizontalOptions="Start"
+                               MaximumWidthRequest="120"
+                               MaximumHeightRequest="80"/>
+                        <Label Grid.Row="0" Grid.Column="1"
+                               Text="{Binding HotelName}"
+                               TextColor="Black"
+                               FontAttributes="Bold"
+                               FontSize="18"
+                               Margin="8,0,0,0"/>
+                        <Label Grid.Row="1" Grid.Column="1"
+                               Text="{Binding City}"
+                               TextColor="Black"
+                               FontSize="16"
+                               Margin="8,0,0,0"/>
+                    </Grid>
+                </Frame>
+            </SwipeView>
+        </DataTemplate>
+    </ContentPage.Resources>
+
+    <StackLayout Margin="20">
+        <Label Text="Arrastra a la izquierda " />
+        <Label Text="Pulsa hacia abajo para refrescar" />
+        <Label Text="{Binding TouristDestinations.Count, StringFormat='Rows: {0}'}" TextColor="Navy"/>
+        <RefreshView IsRefreshing="{Binding IsRefreshing}" RefreshColor="Teal" Command="{Binding RefreshCommand}">
+            <CollectionView Margin="2"
+                                ItemsSource="{Binding TouristDestinations}"
+                                ItemTemplate="{StaticResource DestinationTemplate}"
+                                SelectionMode="Single" />
+        </RefreshView>
+    </StackLayout>
+</ContentPage>

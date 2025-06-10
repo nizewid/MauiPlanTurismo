@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.Views.Options.DestinyCategory"
+             xmlns:drawables="clr-namespace:MauiPlanTurismo.Drawables"
+             Title="Destino CAtegoria">
+
+    <ContentPage.Resources>
+        <drawables:RectanguloSolidoDrawable x:Key="rectanguloSolido" />
+        <drawables:ElipseSolidoDrawable x:Key="elipseSolida"/>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Padding="10" Spacing="20">
+
+        <HorizontalStackLayout HeightRequest="150" BackgroundColor="LightYellow" Spacing="10">
+            <Label Text="Destino Oro" FontSize="20" VerticalTextAlignment="Center" />
+            <GraphicsView Drawable="{StaticResource rectanguloSolido}" HeightRequest="100" WidthRequest="100" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout HeightRequest="150" BackgroundColor="AliceBlue" Spacing="10">
+            <Label Text="Destino recomendado" FontSize="20" VerticalTextAlignment="Center" />
+            <GraphicsView Drawable="{StaticResource elipseSolida}" HeightRequest="100" WidthRequest="100" />
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

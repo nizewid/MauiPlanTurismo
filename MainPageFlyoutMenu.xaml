@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:MauiPlanTurismo"
              xmlns:destinos="clr-namespace:MauiPlanTurismo.Views.Destinations"
              xmlns:info="clr-namespace:MauiPlanTurismo.Views.Info"
+             xmlns:options="clr-namespace:MauiPlanTurismo.Views.Options"
              xmlns:user="clr-namespace:MauiPlanTurismo.Views.User"
              Title="MainPageFlyoutMenu">
 
@@ -14,10 +15,13 @@
         <CollectionView.ItemsSource>
             <x:Array Type="{x:Type modelos:MenuItem}">
                 <modelos:MenuItem Titulo="Inicio" Icono="inicio_blue.png" TargetType="{x:Type local:MainPageFlyoutDetail}" />
-                <modelos:MenuItem Titulo="Destinos" Icono="destino.png" TargetType="{x:Type destinos:TabDestiny}" />
-                <modelos:MenuItem Titulo="Destino Granada" Icono="destino.png" TargetType="{x:Type destinos:GranadaPage}" />
-                <modelos:MenuItem Titulo="Tipos Destino" Icono="destino.png" TargetType="{x:Type destinos:TouristDestination}" />
+                <modelos:MenuItem Titulo="Destinos" Icono="destino.png" TargetType="{x:Type options:DestinationsOptions}" />
+                <modelos:MenuItem Titulo="Destino Granada" Icono="destino.png" TargetType="{x:Type destinos:TabDestiny}" />
+                <modelos:MenuItem Titulo="Tipos Destino" Icono="destino.png" TargetType="{x:Type destinos:TabDestinyDetail}" />
                 <modelos:MenuItem Titulo="Usuario" Icono="usuario_fill.png" TargetType="{x:Type user:Register}" />
+                <modelos:MenuItem Titulo="Ver Figuras" Icono="info.png" TargetType="{x:Type options:DestinyCategory}" />
+                <modelos:MenuItem Titulo="Sitio Externo" Icono="info.png" TargetType="{x:Type options:ExternalSite}" />
+                <modelos:MenuItem Titulo="Sitio Html" Icono="info.png" TargetType="{x:Type options:HtmlPage}" />
                 <modelos:MenuItem Titulo="Acerca de ..." Icono="info.png" TargetType="{x:Type info:InfoApp}" />
             </x:Array>
         </CollectionView.ItemsSource>

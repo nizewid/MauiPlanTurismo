@@ -1,24 +1,69 @@
 using MauiPlanTurismo.Views.Destinations;
 using MauiPlanTurismo.Views.User;
+using System.Numerics;
 
 namespace MauiPlanTurismo.Views.Info;
 
 public partial class InfoApp : ContentPage
 {
+    private bool InitialStep = true;
+    private Quaternion InitialOrientation;
 	public InfoApp()
 	{
 		InitializeComponent();
+        WatchOrientation();
 	}
-    private void btnUsosHorarios_Clicked(object sender, EventArgs e)
+
+    protected override void OnAppearing()
     {
-        Navigation.PushAsync(new UsosHorarios());
+        base.OnAppearing();
+        WatchOrientation();
     }
-    private async void RegisterBtnClicked(object sender, EventArgs e)
+
+    protected override void OnDisappearing()
     {
-        await Navigation.PushAsync(new Register());
+        base.OnDisappearing();
+        CancelWatchOrientation();
     }
-    private async void TouristDestinationsBtnClicked(object sender, EventArgs e)
+
+    private void WatchOrientation()
     {
-        await Navigation.PushAsync(new TouristDestination());
+        if (OrientationSensor.Default.IsSupported)
+        {
+            if (!OrientationSensor.Default.IsMonitoring)
+            {
+                OrientationSensor.Default.ReadingChanged += InspectChangeOrientation;
+                OrientationSensor.Default.Start(SensorSpeed.UI);
+            }
+        }
+    }
+
+    private void CancelWatchOrientation()
+    {
+        if (OrientationSensor.Default.IsSupported)
+        {
+            OrientationSensor.Default.Stop();
+            OrientationSensor.Default.ReadingChanged -= InspectChangeOrientation;
+        }
+    }
+
+    private void InspectChangeOrientation(object sender, OrientationSensorChangedEventArgs e)
+    {
+        if (InitialStep)
+        {
+            InitialOrientation = e.Reading.Orientation;
+            InitialStep = false;
+        }
+        else
+        {
+            if (InitialOrientation.W - e.Reading.Orientation.W > 0.19)
+            {
+                mainContainer.BackgroundColor = Colors.LightGreen;
+            }
+            else
+            {
+                mainContainer.BackgroundColor = Colors.Thistle;
+            }
+        }
     }
 }

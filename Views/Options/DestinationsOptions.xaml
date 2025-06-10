@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.Views.Options.DestinationsOptions"
+            xmlns:options="clr-namespace:MauiPlanTurismo.Views.Options"
+            xmlns:destinations="clr-namespace:MauiPlanTurismo.Views.Destinations">
+    
+    <options:DestinyCategory Title="Cate."></options:DestinyCategory>
+    <options:ExternalSite Title="Externo"></options:ExternalSite>
+    <options:DestinyListWithoutEnd Title="Lista"></options:DestinyListWithoutEnd>
+    
+</TabbedPage>

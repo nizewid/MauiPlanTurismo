@@ -2,56 +2,90 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiPlanTurismo.Views.User.Register"
-             xmlns:behav="clr-namespace:MauiPlanTurismo.Behaivors"
-             Title="Register">
-    <VerticalStackLayout Padding="20" Spacing="10">
-        <Label 
-            Text="Formulario de registro"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <!--   Elementos de registro 
-                                    Nombre
-                                    Apellidos
-                                    Dirección
-                                    Código Postal
-                                    Población
-                                    Provincia. -->
+             Title="Registro de Usuario">
 
-            <Label Text="Nombre" FontSize="Medium"/>
-            <Entry x:Name="NameEntry" Placeholder="Introduce tu nombre">
-                <Entry.Behaviors>
-                    <behav:ValidateMaxMinLength behav:MinLength="3" behav:MaxLength="9" />
-                </Entry.Behaviors>
-            </Entry>
-            <Label Text="Apellidos"/>
-            <Entry x:Name="SurnameEntry" Placeholder="Introduce tus apellidos" >
-                <Entry.Behaviors>
-                    <behav:ValidateMaxMinLength behav:MinLength="3" behav:MaxLength="12" />
-                </Entry.Behaviors>
-            </Entry>
-            <Label Text="Dirección"/>
-            <Entry x:Name="AddressEntry" Placeholder="Introduce tu dirección" >
-                <Entry.Behaviors>
-                    <behav:ValidateMaxMinLength behav:MinLength="6" behav:MaxLength="25" />
-                </Entry.Behaviors>
-            </Entry>
-            <Label Text="Código Postal"/>
-            <Entry x:Name="PostalCodeEntry" Placeholder="Introduce tu código postal" >
-                <Entry.Behaviors>
-                    <behav:ValidateMaxMinLength behav:MinLength="4" behav:MaxLength="5" />
-                </Entry.Behaviors>
-            </Entry>
-            <Label Text="Población"/>
-            <Entry x:Name="CityEntry" Placeholder="Introduce tu población" >
-                <Entry.Behaviors>
-                    <behav:ValidateMaxMinLength behav:MinLength="6" behav:MaxLength="25" />
-                </Entry.Behaviors>
-            </Entry>
-            <Label Text="Provincia"/>
-            <Entry x:Name="ProvinceEntry" Placeholder="Introduce tu provincia" >
-                <Entry.Behaviors>
-                    <behav:ValidateMaxMinLength behav:MinLength="3" behav:MaxLength="25" />
-                </Entry.Behaviors>
-            </Entry>
+    <VerticalStackLayout Margin="20" Spacing="15">
+        <Label Text="Información del Usuario"
+               FontAttributes="Bold"
+               FontSize="20"
+               HorizontalTextAlignment="Center" />
+
+        <Label Text="Nombre de usuario"/>
+        <Entry x:Name="UsernameEntry" Placeholder="Introduce tu nombre de usuario">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Lavender" />
+                                <Setter Property="FontSize" Value="18" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState Name="Focused">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="MistyRose" />
+                                <Setter Property="TextColor" Value="Purple" />
+                                <Setter Property="FontSize" Value="20" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState Name="Error">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Red" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </VisualStateManager.VisualStateGroups>
+        </Entry>
+
+        <Label Text="Rol"/>
+        <Entry x:Name="RoleEntry" Placeholder="Introduce tu rol">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Lavender" />
+                                <Setter Property="FontSize" Value="18" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState Name="Focused">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="MistyRose" />
+                                <Setter Property="TextColor" Value="Purple" />
+                                <Setter Property="FontSize" Value="20" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState Name="Error">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Red" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </VisualStateManager.VisualStateGroups>
+        </Entry>
+        <Label Text="¿Es Scrum Master?" Margin="0,40,0,0"/>
+        <Switch x:Name="IsScrumMasterSwitch">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState Name="On">
+                            <VisualState.Setters>
+                                <Setter Property="ThumbColor" Value="Green" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState Name="Off">
+                            <VisualState.Setters>
+                                <Setter Property="ThumbColor" Value="Red" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </VisualStateManager.VisualStateGroups>
+        </Switch>
+
+        <Button Text="EnseñarDatos" Clicked="OnShowDataClicked" />
+
     </VerticalStackLayout>
 </ContentPage>

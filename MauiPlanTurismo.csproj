@@ -111,10 +111,25 @@
 	  <MauiXaml Update="Views\Info\InfoApp.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\User\Register.xaml">
+	  <MauiXaml Update="Views\Info\UsosHorarios.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Info\UsosHorarios.xaml">
+	  <MauiXaml Update="Views\Options\DestinationsOptions.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Options\DestinyCategory.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Options\DestinyListWithoutEnd.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Options\ExternalSite.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Options\HtmlPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\User\Register.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
@@ -140,6 +155,9 @@
 	<ItemGroup>
 	  <Compile Update="MainPageFlyoutDetail.xaml.cs">
 	    <DependentUpon>MainPageFlyoutDetail.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\User\Register.xaml.cs">
+	    <DependentUpon>Register.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
