@@ -22,7 +22,8 @@
                TextColor="{OnPlatform Default=Yellow, iOS=Red, Android=Green}"
                BackgroundColor="{OnPlatform Default=Blue, iOS=White, Android=Black}"
                Margin="0,20,0,20"></Label>
-
+            
+            <Button x:Name="btnVerCarousel" Text="Carousel" Clicked="btnVerCarousel_Clicked" HorizontalOptions="Center"></Button>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

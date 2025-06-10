@@ -66,4 +66,9 @@ public partial class InfoApp : ContentPage
             }
         }
     }
+    private void btnVerCarousel_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new CarouselDestinations());
+    }
+
 }

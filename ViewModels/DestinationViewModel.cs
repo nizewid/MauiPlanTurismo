@@ -1,22 +1,92 @@
 ﻿using MauiPlanTurismo.Models;
-using MauiPlanTurismo.Services;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MauiPlanTurismo.Data;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace MauiPlanTurismo.ViewModels
 {
-    public class DestinationViewModel
+    public class DestinationViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<TouristDestination> Destinations { get; set; }
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        public List<TouristDestination> DestinationsList { get; set; }
 
         public DestinationViewModel()
         {
-            var lista = DestinationsService.GetAll();
-            Destinations = new ObservableCollection<TouristDestination>(lista);
+            DestinationsList = new List<TouristDestination>();
+            LoadDestinationsList();
+        }
+
+        private void LoadDestinationsList()
+        {
+            DestinationsList = TouristDestinationData.GetTouristDestinations();
+        }
+        #region Destinations for MultiBinding example
+
+        private TouristDestination beachDestination = new TouristDestination
+        {
+            HotelName = "Beach Paradise Hotel",
+            City = "Málaga",
+            Province = "Andalucía",
+            HasBeach = true,
+            HasPool = true,
+            IncludesBreakfast = true
+        };
+
+        public TouristDestination BeachDestination
+        {
+            get => beachDestination;
+            set
+            {
+                beachDestination = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private TouristDestination ruralDestination = new TouristDestination
+        {
+            HotelName = "Casa Rural Montaña",
+            City = "Cangas de Onís",
+            Province = "Asturias",
+            HasBeach = false,
+            HasPool = false,
+            IncludesBreakfast = false
+        };
+
+        public TouristDestination RuralDestination
+        {
+            get => ruralDestination;
+            set
+            {
+                ruralDestination = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private TouristDestination mountainDestination = new TouristDestination
+        {
+            HotelName = "Albergue Pirineos",
+            City = "Jaca",
+            Province = "Huesca",
+            HasBeach = false,
+            HasPool = true,
+            IncludesBreakfast = true
+        };
+
+        public TouristDestination MountainDestination
+        {
+            get => mountainDestination;
+            set
+            {
+                mountainDestination = value;
+                OnPropertyChanged();
+            }
+        }
+        #endregion
+
+        void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
 }

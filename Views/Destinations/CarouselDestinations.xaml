@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.Views.Destinations.CarouselDestinations"
+             xmlns:viewmodel="clr-namespace:MauiPlanTurismo.ViewModels"
+             Title="Carrusel de Destinos">
+
+
+    <ContentPage.BindingContext>
+        <viewmodel:DestinationViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <DataTemplate x:Key="DestinationTemplate">
+            <StackLayout>
+                <Frame HasShadow="True" BorderColor="DarkGray" CornerRadius="5" Margin="20" HeightRequest="400" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                    <StackLayout>
+                        <Label Text="{Binding AccommodationName}" FontSize="24" FontAttributes="Bold" TextColor="Black" />
+                        <Image Source="{Binding Image}" HeightRequest="250" WidthRequest="370" Aspect="Fill" />
+                        <Label Text="{Binding Province}" FontSize="18" FontAttributes="Bold" TextColor="Black" />
+
+                        <HorizontalStackLayout Spacing="20">
+                            <Label Text="Hotel" IsVisible="{Binding IsHotel}" FontSize="14" TextColor="Gray" />
+                            <Label Text="{Binding Stars, StringFormat='{0} Estrellas'}" FontSize="14" TextColor="Gray" />
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout Spacing="110">
+                            <Label Text="Desayuno incluido" IsVisible="{Binding IncludesBreakfast}" FontSize="14" TextColor="Green" FontAttributes="Bold" VerticalOptions="Center" />
+                            <Label Text="{Binding Price, StringFormat='{0} €'}" FontSize="20" TextColor="Fuchsia" FontAttributes="Bold" />
+                        </HorizontalStackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </DataTemplate>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <CarouselView ItemsSource="{Binding DestinationsList}"
+                      ItemTemplate="{StaticResource DestinationTemplate}"
+                      IndicatorView="positionIndicator" />
+
+
+        <IndicatorView x:Name="positionIndicator"
+                       IndicatorColor="Lavender"
+                       IndicatorSize="14"
+                       SelectedIndicatorColor="DodgerBlue"
+                       HorizontalOptions="Center" />
+    </StackLayout>
+</ContentPage>
