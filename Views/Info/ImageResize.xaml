@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.Views.Info.ImageResize"
+             Title="Ajustar imagen">
+    <ScrollView>
+        <VerticalStackLayout>
+            <StackLayout>
+                <Label Text="AspectFit"/>
+                <Image Source="sevilla_plaza.jpeg" Aspect="AspectFit"  HeightRequest="180"></Image>
+            </StackLayout>
+            <VerticalStackLayout>
+
+                <StackLayout Margin="20" BackgroundColor="Salmon">
+                    <Label Text="AspectFit"/>
+                    <Image Source="sevilla_plaza.jpeg" Aspect="AspectFit"  HeightRequest="180"></Image>
+                </StackLayout>
+
+                <StackLayout Margin="20" BackgroundColor="RosyBrown">
+                    <Label Text="AspectFill"/>
+                    <Image Source="sevilla_plaza.jpeg" Aspect="AspectFill"  HeightRequest="180"></Image>
+                </StackLayout>
+
+                <StackLayout Margin="20" BackgroundColor="Wheat">
+                    <Label Text="Fill"/>
+                    <Image Source="sevilla_plaza.jpeg" Aspect="Fill"  HeightRequest="180"></Image>
+                </StackLayout>
+
+                <VerticalStackLayout Margin="0,180" BackgroundColor="Thistle" >
+                    <Label Text="Center"/>
+                    <Image Source="sevilla_plaza.jpeg" Aspect="Center"  MaximumHeightRequest="100"></Image>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

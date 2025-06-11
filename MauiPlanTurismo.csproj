@@ -111,6 +111,9 @@
 	  <MauiXaml Update="Views\Destinations\TouristDestination.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Info\ImageResize.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Info\InfoApp.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

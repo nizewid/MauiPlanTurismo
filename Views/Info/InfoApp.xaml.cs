@@ -70,5 +70,9 @@ public partial class InfoApp : ContentPage
     {
         Navigation.PushAsync(new CarouselDestinations());
     }
+    private void btnResizeImg_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new ImageResize());
+    }
 
 }
