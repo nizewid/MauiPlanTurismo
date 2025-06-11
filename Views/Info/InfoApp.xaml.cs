@@ -74,5 +74,9 @@ public partial class InfoApp : ContentPage
     {
         Navigation.PushAsync(new ImageResize());
     }
+    private void btnEntryDestination_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new EntryControl());
+    }
 
 }

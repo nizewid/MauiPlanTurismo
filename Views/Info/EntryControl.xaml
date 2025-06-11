@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.Views.Info.EntryControl"
+             Title="EntryControl">
+
+    <VerticalStackLayout Padding="20">
+
+        <Label Text="Completar datos destino" FontSize="24" TextColor="Navy" FontAttributes="Bold" Margin="0,0,0,30"/>
+
+        <Label Text="Tipo alojamiento" FontSize="18" Margin="0,10,0,0" TextColor="Navy"/>
+        <Entry Text="Hotel" />
+
+        <Label Text="Comunidad autónoma" FontSize="18" Margin="0,10,0,0" TextColor="Navy"/>
+        <Entry Text="Andalucía"/>
+
+        <Label Text="Provincia" FontSize="18" Margin="0,10,0,0" TextColor="Navy"/>
+        <Entry Text="Málaga"/>
+
+        <Label Text="Ubicación" FontSize="18" Margin="0,10,0,0" TextColor="Navy"/>
+        <Entry Text="Montaña"/>
+
+        <Label Text="Población" FontSize="18" Margin="0,10,0,0" TextColor="Navy"/>
+        <Entry Text="Ronda"/>
+
+
+    </VerticalStackLayout>
+
+</ContentPage>
