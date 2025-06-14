@@ -24,7 +24,11 @@
                Margin="0,20,0,20"></Label>
 
             <!-- <Button x:Name="btnVerCarousel" Text="Carousel" Clicked="btnVerCarousel_Clicked" HorizontalOptions="Center"></Button>-->
-            <Button x:Name="btnEntryDestination" Text="Entry Ctrl" Clicked="btnEntryDestination_Clicked" HorizontalOptions="Center"></Button>
+            <!--<Button x:Name="btnEntryDestination" Text="Entry Ctrl" Clicked="btnEntryDestination_Clicked" HorizontalOptions="Center"/>-->
+            <Button x:Name="btnCyPDestination" Text="CyP" Clicked="btnCyPDestination_Clicked" HorizontalOptions="Center"></Button>
+            <Button x:Name="btnMove" Text="Desplazar" Clicked="btnMove_Clicked" HorizontalOptions="Center"></Button>
+            <Button x:Name="btnRotate" Text="Girar" Clicked="btnRotate_Clicked" HorizontalOptions="Center"></Button>
+            <Button x:Name="btnZoom" Text="Zoom" Clicked="btnZoom_Clicked" HorizontalOptions="Center"></Button>
             <!-- <Button x:Name="btnResizeImage" Text="Ajustar Imagen" Clicked="btnResizeImg_Clicked" HorizontalOptions="Center"></Button>-->
         </VerticalStackLayout>
     </ScrollView>

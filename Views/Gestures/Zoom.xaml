@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.Views.Gestures.Zoom"
+             Title="Zoom">
+    <VerticalStackLayout VerticalOptions="Center">
+
+        <VerticalStackLayout Margin="0,0,0,0">
+            <Image Source="granada_generalife.jpg" x:Name="imgFondo" HeightRequest="400" >
+                <Image.GestureRecognizers>
+                    <PinchGestureRecognizer PinchUpdated="ImgFondo_PinchUpdated"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </VerticalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

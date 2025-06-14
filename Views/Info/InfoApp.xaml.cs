@@ -1,4 +1,5 @@
 using MauiPlanTurismo.Views.Destinations;
+using MauiPlanTurismo.Views.Gestures;
 using MauiPlanTurismo.Views.User;
 using System.Numerics;
 
@@ -77,6 +78,22 @@ public partial class InfoApp : ContentPage
     private void btnEntryDestination_Clicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new EntryControl());
+    }
+    private void btnCyPDestination_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new CopyPasteDestination());
+    }
+    private void btnRotate_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new Rotate());
+    }
+    private void btnMove_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new Move());
+    }
+    private void btnZoom_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new Zoom());
     }
 
 }

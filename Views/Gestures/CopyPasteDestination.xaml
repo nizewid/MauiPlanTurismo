@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.Views.Gestures.CopyPasteDestination"
+             Title="Copy Paste Destino">
+    <VerticalStackLayout Margin="20">
+
+        <StackLayout Margin="0,0,0,30">
+            <Label Text="Seleccionar viaje" FontSize="20" />
+        </StackLayout>
+
+        <HorizontalStackLayout>
+            <!-- Ávila -->
+            <StackLayout BackgroundColor="GhostWhite">
+                <StackLayout.GestureRecognizers>
+                    <DragGestureRecognizer DragStarting="StartDragAvila" />
+                </StackLayout.GestureRecognizers>
+
+                <Label Text="Hotel Eurostarts" FontSize="20" FontAttributes="Bold" TextColor="Black" x:Name="lblHotelAvila" />
+                <Image Source="avila.jpeg" WidthRequest="180" Aspect="Fill" HorizontalOptions="Start" x:Name="imgAvila" />
+                <Label Text="Ávila" FontSize="18" FontAttributes="Bold" TextColor="Black" x:Name="lblCityAvila" />
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Hotel" FontSize="14" TextColor="Gray" x:Name="lblTypeAvila" />
+                    <Label Text="3 Estrellas" FontSize="14" TextColor="Gray" x:Name="lblCategoryAvila" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Desayuno incluido" FontSize="14" TextColor="Green" FontAttributes="Bold" VerticalOptions="Center" x:Name="lblBreakfastAvila" />
+                    <Label Text="90 €" FontSize="20" TextColor="Fuchsia" FontAttributes="Bold" x:Name="lblPriceAvila" />
+                </HorizontalStackLayout>
+            </StackLayout>
+
+            <!-- Jerez -->
+            <StackLayout BackgroundColor="SeaShell">
+                <StackLayout.GestureRecognizers>
+                    <DragGestureRecognizer DragStarting="StartDragJerez" />
+                </StackLayout.GestureRecognizers>
+
+                <Label Text="Barceló Jerez" FontSize="20" FontAttributes="Bold" TextColor="Black" x:Name="lblHotelJerez" />
+                <Image Source="jerez_plaza.jpg" WidthRequest="180" Aspect="Fill" HorizontalOptions="Start" x:Name="imgJerez" />
+                <Label Text="Jerez de la Frontera" FontSize="18" FontAttributes="Bold" TextColor="Black" x:Name="lblCityJerez" />
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Hotel" FontSize="14" TextColor="Gray" x:Name="lblTypeJerez" />
+                    <Label Text="4 Estrellas" FontSize="14" TextColor="Gray" x:Name="lblCategoryJerez" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Desayuno incluido" FontSize="14" TextColor="Green" FontAttributes="Bold" VerticalOptions="Center" x:Name="lblBreakfastJerez" />
+                    <Label Text="110 €" FontSize="20" TextColor="Fuchsia" FontAttributes="Bold" x:Name="lblPriceJerez" />
+                </HorizontalStackLayout>
+            </StackLayout>
+        </HorizontalStackLayout>
+
+        <StackLayout Margin="0,30,0,0">
+            <Label Text="Su selección ..." FontSize="20" />
+        </StackLayout>
+
+        <!-- Zona de Pegado -->
+        <StackLayout BackgroundColor="SeaShell" Margin="0,20,0,0" HorizontalOptions="Center">
+            <StackLayout.GestureRecognizers>
+                <DropGestureRecognizer Drop="CompleteSelection" />
+            </StackLayout.GestureRecognizers>
+
+            <Label Text="-------" FontSize="20" FontAttributes="Bold" TextColor="Black" x:Name="lblHotelPaste" />
+            <Image Source="fondo_gris_200.png" WidthRequest="180" Aspect="Fill" HorizontalOptions="Start" x:Name="imgPaste" />
+            <Label Text="-" FontSize="18" FontAttributes="Bold" TextColor="Black" x:Name="lblCityPaste" />
+
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="-" FontSize="14" TextColor="Gray" x:Name="lblTypePaste" />
+                <Label Text="-" FontSize="14" TextColor="Gray" x:Name="lblCategoryPaste" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="-" FontSize="14" TextColor="Green" FontAttributes="Bold" VerticalOptions="Center" x:Name="lblBreakfastPaste" />
+                <Label Text="0 €" FontSize="20" TextColor="Fuchsia" FontAttributes="Bold" x:Name="lblPricePaste" />
+            </HorizontalStackLayout>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

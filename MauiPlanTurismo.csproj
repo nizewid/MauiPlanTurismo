@@ -61,17 +61,17 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Images\Cities\avila.jpeg" />
-	  <None Remove="Resources\Images\Cities\burgos_catedral.JPG" />
-	  <None Remove="Resources\Images\Cities\cadiz_catedral.jpg" />
-	  <None Remove="Resources\Images\Cities\corunia.JPG" />
-	  <None Remove="Resources\Images\Cities\granada_pan_lejos.JPG" />
-	  <None Remove="Resources\Images\Cities\jerez_plaza.jpg" />
-	  <None Remove="Resources\Images\Cities\madrid_palacio.JPG" />
-	  <None Remove="Resources\Images\Cities\salamanca_plaza_noche.jpg" />
-	  <None Remove="Resources\Images\Cities\santiago.JPG" />
-	  <None Remove="Resources\Images\Cities\segovia_alcazar.jpg" />
-	  <None Remove="Resources\Images\Cities\sevilla_plaza.jpeg" />
+	  <None Remove="Resources\Images\Ciudades\avila.jpeg" />
+	  <None Remove="Resources\Images\Ciudades\burgos_catedral.JPG" />
+	  <None Remove="Resources\Images\Ciudades\cadiz_catedral.jpg" />
+	  <None Remove="Resources\Images\Ciudades\corunia.JPG" />
+	  <None Remove="Resources\Images\Ciudades\granada_pan_lejos.JPG" />
+	  <None Remove="Resources\Images\Ciudades\jerez_plaza.jpg" />
+	  <None Remove="Resources\Images\Ciudades\madrid_palacio.JPG" />
+	  <None Remove="Resources\Images\Ciudades\salamanca_plaza_noche.jpg" />
+	  <None Remove="Resources\Images\Ciudades\santiago.JPG" />
+	  <None Remove="Resources\Images\Ciudades\segovia_alcazar.jpg" />
+	  <None Remove="Resources\Images\Ciudades\sevilla_plaza.jpeg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -111,6 +111,15 @@
 	  <MauiXaml Update="Views\Destinations\TouristDestination.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Gestures\Move.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Gestures\Rotate.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Gestures\Zoom.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Info\EntryControl.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -145,20 +154,6 @@
 
 	<ItemGroup>
 	  <Folder Include="Navigation\" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiImage Include="Resources\Images\Cities\avila.jpeg" />
-	  <MauiImage Include="Resources\Images\Cities\burgos_catedral.JPG" />
-	  <MauiImage Include="Resources\Images\Cities\cadiz_catedral.jpg" />
-	  <MauiImage Include="Resources\Images\Cities\corunia.JPG" />
-	  <MauiImage Include="Resources\Images\Cities\granada_pan_lejos.JPG" />
-	  <MauiImage Include="Resources\Images\Cities\jerez_plaza.jpg" />
-	  <MauiImage Include="Resources\Images\Cities\madrid_palacio.JPG" />
-	  <MauiImage Include="Resources\Images\Cities\salamanca_plaza_noche.jpg" />
-	  <MauiImage Include="Resources\Images\Cities\santiago.JPG" />
-	  <MauiImage Include="Resources\Images\Cities\segovia_alcazar.jpg" />
-	  <MauiImage Include="Resources\Images\Cities\sevilla_plaza.jpeg" />
 	</ItemGroup>
 
 	<ItemGroup>
