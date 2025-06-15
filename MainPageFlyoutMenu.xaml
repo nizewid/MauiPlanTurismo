@@ -8,6 +8,7 @@
              xmlns:info="clr-namespace:MauiPlanTurismo.Views.Info"
              xmlns:options="clr-namespace:MauiPlanTurismo.Views.Options"
              xmlns:user="clr-namespace:MauiPlanTurismo.Views.User"
+             xmlns:travel="clr-namespace:MauiPlanTurismo.Views.Travel"
              Title="MainPageFlyoutMenu">
 
     <CollectionView x:Name="collectionView"  x:FieldModifier="public"  SelectionMode="Single">
@@ -20,8 +21,9 @@
                 <modelos:MenuItem Titulo="Tipos Destino" Icono="destino.png" TargetType="{x:Type destinos:TabDestinyDetail}" />
                 <modelos:MenuItem Titulo="Usuario" Icono="usuario_fill.png" TargetType="{x:Type user:Register}" />
                 <modelos:MenuItem Titulo="Ver Figuras" Icono="info.png" TargetType="{x:Type options:DestinyCategory}" />
-                <modelos:MenuItem Titulo="Sitio Externo" Icono="info.png" TargetType="{x:Type options:ExternalSite}" />
-                <modelos:MenuItem Titulo="Sitio Html" Icono="info.png" TargetType="{x:Type options:HtmlPage}" />
+                <!--<modelos:MenuItem Titulo="Sitio Externo" Icono="info.png" TargetType="{x:Type options:ExternalSite}" /> -->
+                <modelos:MenuItem Titulo="Solicitar Viaje" Icono="destino.png" TargetType="{x:Type travel:TravelRequest}" />
+                <!--<modelos:MenuItem Titulo="Sitio Html" Icono="info.png" TargetType="{x:Type options:HtmlPage}" />-->
                 <modelos:MenuItem Titulo="Acerca de ..." Icono="info.png" TargetType="{x:Type info:InfoApp}" />
             </x:Array>
         </CollectionView.ItemsSource>

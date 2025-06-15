@@ -147,6 +147,9 @@
 	  <MauiXaml Update="Views\Options\HtmlPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Travel\TravelRequest.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\User\Register.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

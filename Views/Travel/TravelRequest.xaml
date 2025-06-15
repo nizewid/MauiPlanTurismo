@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.Views.Travel.TravelRequest"
+             xmlns:behav="clr-namespace:MauiPlanTurismo.Behaviors"
+             Title="Solicitar Viaje">
+    <VerticalStackLayout>
+
+        <StackLayout Margin="20" HorizontalOptions="Center">
+            <Label Text="Nuevo viaje" FontSize="24" TextColor="Navy" FontAttributes="Bold"/>
+            <Label Text="Destino Granada" FontSize="18" TextColor="Navy"/>
+        </StackLayout>
+
+        <VerticalStackLayout Margin="20" BackgroundColor="AliceBlue">
+            <Label Text="Datos de la solicitud" BackgroundColor="Navy" TextColor="White" FontSize="16" HorizontalTextAlignment="Center"/>
+
+            <VerticalStackLayout Margin="20">
+                <Label Text="DNI" />
+                <Entry x:Name="txtDni" BackgroundColor="White" FontSize="20">
+                    <Entry.Behaviors>
+                        <behav:ValidateDniBehavior/>
+                        <!-- <behav:ValidateMaxMinLenBehavior behav:MinLength="9" behav:MaxLength="9"/> No aplica para -->
+                        </Entry.Behaviors>
+                </Entry>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Margin="20">
+                <Label Text="Nombre" />
+                <Entry x:Name="txtNombre" BackgroundColor="White" FontSize="20">
+                    <Entry.Behaviors>
+                        <behav:ValidateMaxMinLenBehavior behav:MinLength="5" behav:MaxLength="20"/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Label Text="Apellidos" />
+                <Entry x:Name="txtApellidos" BackgroundColor="White" FontSize="20">
+                    <Entry.Behaviors>
+                        <behav:ValidateMaxMinLenBehavior behav:MinLength="5" behav:MaxLength="30"/>
+                    </Entry.Behaviors>
+                </Entry>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
