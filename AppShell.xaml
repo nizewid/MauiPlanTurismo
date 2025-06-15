@@ -4,12 +4,83 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiPlanTurismo"
-    Shell.FlyoutBehavior="Disabled"
-    Title="MauiPlanTurismo">
+    x:Name="shell"
+    xmlns:models="clr-namespace:MauiPlanTurismo.Models"
+    xmlns:destination="clr-namespace:MauiPlanTurismo.Views.Destinations"
+    xmlns:info="clr-namespace:MauiPlanTurismo.Views.Info"
+    xmlns:options="clr-namespace:MauiPlanTurismo.Views.Options"
+    xmlns:user="clr-namespace:MauiPlanTurismo.Views.User"
+    xmlns:travel="clr-namespace:MauiPlanTurismo.Views.Travel"
+    xmlns:gestures="clr-namespace:MauiPlanTurismo.Views.Gestures"
+    FlyoutBackgroundImage="playa.jpg"
+    FlyoutBackgroundImageAspect="AspectFill"
+    FlyoutHeaderBehavior="CollapseOnScroll"
+    FlyoutBehavior="Flyout">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPageFlyout}"
-        Route="MainPage" />
+    <Shell.Resources>
+        <Style x:Key="BaseStyle" TargetType="Element">
+            <Setter Property="Shell.BackgroundColor" Value="#455A64" />
+            <Setter Property="Shell.ForegroundColor" Value="White" />
+            <Setter Property="Shell.TitleColor"  Value="White" />
+            <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+            <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+        </Style>
+        <Style TargetType="ShellItem"  BasedOn="{StaticResource BaseStyle}" />
+        <Style x:Key="DomesticShell" TargetType="Element" BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"  Value="#039BE6" />
+            <Setter Property="Shell.TitleColor" Value="White"></Setter>
+        </Style>
+
+    </Shell.Resources>
+
+
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="Black">
+            <Image Aspect="AspectFill" Source="sevilla_plaza.png" Opacity="0.4" HeightRequest="80"/>
+            <Label Text="Planes Turismo"  TextColor="White" FontAttributes="Bold" FontSize="24" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <Shell.FlyoutFooter>
+        <StackLayout>
+            <Label Text="Agenda Turismo" TextColor="GhostWhite" FontAttributes="Bold" HorizontalOptions="Center" />
+            <Label Text="Net MAUI-Imagina " TextColor="GhostWhite" HorizontalOptions="Center" />
+        </StackLayout>
+    </Shell.FlyoutFooter>
+
+
+
+    <FlyoutItem Route="planesturismo" FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="Inicio" Route="Inicio" Icon="inicio_blue.png">
+            <ShellContent Route="inicio" Title="Tipos" Icon="destino_bn.png" Style="{StaticResource DomesticShell}" ContentTemplate="{DataTemplate local:MainPageFlyoutDetail}" />
+        </Tab>
+
+        <Tab Route="lista_destinos" Title="Destinos" Icon="ubicacion.png">
+            <ShellContent Route="lista_top_10" Title="TOP 10" Icon="destino_bn.png" Style="{StaticResource DomesticShell}" ContentTemplate="{DataTemplate destination:TouristDestination}" />
+            <ShellContent Route="lista_tipos_destino" Title="4 PLus" Icon="destino_bn.png" Style="{StaticResource DomesticShell}" ContentTemplate="{DataTemplate destination:TouristDestination}" />
+            <ShellContent Route="carousel_tipos_destino" Title="Tarjeta" Icon="destino_bn.png" Style="{StaticResource DomesticShell}" ContentTemplate="{DataTemplate options:DestinyListWithoutEnd}" />
+            <ShellContent Route="lista_sin_fin" Title="Todos" Icon="destino_bn.png" Style="{StaticResource DomesticShell}" ContentTemplate="{DataTemplate options:DestinyListWithoutEnd}" />
+            <ShellContent Route="lista_collection" Title="Fotos" Icon="destino_bn.png" Style="{StaticResource DomesticShell}" ContentTemplate="{DataTemplate destination:CarouselDestinations}" />
+        </Tab>
+
+        <Tab Route="granada" Title="Granada" Icon="alhambra_ico.png">
+            <ShellContent Route="granada_destino" Title="Viaje" Icon="destino_bn.png" Style="{StaticResource DomesticShell}" ContentTemplate="{DataTemplate destination:TabDestinyDestiny}" />
+            <ShellContent Route="granada_detalle" Title="Detalle" Icon="destino_bn.png" Style="{StaticResource DomesticShell}" ContentTemplate="{DataTemplate destination:TabDestinyDetail}" />
+            <ShellContent Route="granada_precio" Title="Precio" Icon="destino_bn.png" Style="{StaticResource DomesticShell}" ContentTemplate="{DataTemplate destination:TabDestinyPrices}" />
+            <ShellContent Route="granada_solicitar" Title="Solicitar" Icon="destino_bn.png" Style="{StaticResource DomesticShell}" ContentTemplate="{DataTemplate travel:TravelRequest}" />
+        </Tab>
+
+        <Tab Route="viaje" Title="Viaje" Icon="maleta">
+            <ShellContent Route="viaje_seleccionar" Title="Seleccionar" Icon="destino_bn.png" Style="{StaticResource DomesticShell}" ContentTemplate="{DataTemplate gestures:CopyPasteDestination}" />
+            <ShellContent Route="viaje_solicitar" Title="Solicitar" Icon="destino_bn.png" Style="{StaticResource DomesticShell}" ContentTemplate="{DataTemplate travel:TravelRequest}" />
+            <ShellContent Route="viaje_datos" Title="Datos" Icon="destino_bn.png" Style="{StaticResource DomesticShell}" ContentTemplate="{DataTemplate destination:TouristDestination}" />
+        </Tab>
+
+    </FlyoutItem>
+
+    <ShellContent Route="booking" Title="Booking" Icon="destino_bn.png" Style="{StaticResource DomesticShell}" ContentTemplate="{DataTemplate options:ExternalSite}" />
+    <ShellContent Route="usuario" Title="Usuario" Icon="usuario_fill.png" Style="{StaticResource DomesticShell}" ContentTemplate="{DataTemplate user:Register}" />
+    <ShellContent Route="info" Title="Acerca de ..." Icon="info.png" Style="{StaticResource DomesticShell}" ContentTemplate="{DataTemplate info:InfoApp}" />
+
 
 </Shell>
