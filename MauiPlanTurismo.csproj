@@ -90,6 +90,15 @@
 	  <MauiXaml Update="MainPageFlyoutMenu.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Animations\AnimationCar.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Animations\AnimationPromotion.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Animations\AnimationZoom.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Destinations\CarouselDestinations.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

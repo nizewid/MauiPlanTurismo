@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.Views.Animations.AnimationCar"
+             Title="Animacion Coche">
+    <ContentPage.Resources>
+        <Style x:Key="buttonBase" TargetType="Button">
+            <Setter Property="HeightRequest" Value="40"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BackgroundColor" Value="LightSteelBlue"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <Style x:Key="buttonRed" TargetType="Button" BasedOn="{StaticResource buttonBase}">
+            <Setter Property="BackgroundColor" Value="LightPink"/>
+            <Setter Property="TextColor" Value="DarkRed"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout>
+        <Label Text="Seleccionando datos ...."  VerticalOptions="Start"  HorizontalOptions="Center" />
+
+        <Image Source="coche.png" WidthRequest="40" x:Name="imgCoche" HorizontalOptions="Start"/>
+
+        <HorizontalStackLayout   VerticalOptions="End"  HorizontalOptions="Center" Margin="0,620,0,0" Spacing="10">
+            <Button Text="Iniciar" x:Name="btnBegin" Clicked="btnBegin_Clicked" Style="{StaticResource buttonBase}"/>
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.Views.Animations.AnimationPromotion"
+             Title="Promocion">
+    <VerticalStackLayout>
+
+        <VerticalStackLayout x:Name="pictureContainer" HorizontalOptions="Center" Margin="0,150,0,0" BackgroundColor="Bisque">
+            <Image Source="salamanca_plaza_noche.jpg" x:Name="imgFoto" WidthRequest="290"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout x:Name="labelContainer" Margin="0,140,0,0">
+            <Label Text="Promoción Primavera" x:Name="lblPromo" FontSize="20" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Fuchsia"/>
+        </VerticalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

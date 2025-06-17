@@ -1,3 +1,4 @@
+using MauiPlanTurismo.Views.Animations;
 using MauiPlanTurismo.Views.Destinations;
 using MauiPlanTurismo.Views.Gestures;
 using MauiPlanTurismo.Views.User;
@@ -95,5 +96,16 @@ public partial class InfoApp : ContentPage
     {
         Navigation.PushAsync(new Zoom());
     }
-
+    private void btnAnimationZoom_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new AnimationZoom());
+    }
+    private void btnAnimationPromo_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new AnimationPromotion());
+    }
+    private void btnAnimationCar_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new AnimationCar());
+    }
 }
