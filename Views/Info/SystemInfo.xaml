@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.Views.Info.SystemInfo"
+             Title="SystemInfo">
+
+    <ContentPage.Resources>
+        <Style x:Key="labelTitle" TargetType="Label">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="TextColor" Value="Navy"/>
+        </Style>
+        <Style x:Key="labelData" TargetType="Label">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="TextColor" Value="Blue"/>
+        </Style>
+        <Style x:Key="buttonBase" TargetType="Button">
+            <Setter Property="HeightRequest" Value="40"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BackgroundColor" Value="LightSteelBlue"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <Style x:Key="buttonRed" TargetType="Button" BasedOn="{StaticResource buttonBase}">
+            <Setter Property="BackgroundColor" Value="LightPink"/>
+            <Setter Property="TextColor" Value="DarkRed"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Margin="20">
+        <Label Text="Información interna"
+               HorizontalOptions="Center"
+               Style="{StaticResource labelTitle}" />
+
+        <!-- Datos de la app -->
+        <VerticalStackLayout Margin="0,20,0,0" Spacing="6">
+            <HorizontalStackLayout>
+                <Label Text="App Nombre:"/>
+                <Label Text="{Binding AppName}" Style="{StaticResource labelData}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Paquete:"/>
+                <Label Text="{Binding PackageName}" Style="{StaticResource labelData}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Versión:"/>
+                <Label Text="{Binding AppVersion}" Style="{StaticResource labelData}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Compilado:"/>
+                <Label Text="{Binding BuildNumber}" Style="{StaticResource labelData}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Modelo Empaquetado:"/>
+                <Label Text="{Binding PackagingModel}" Style="{StaticResource labelData}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Dirección Layout:"/>
+                <Label Text="{Binding LayoutDirection}" Style="{StaticResource labelData}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Tema:"/>
+                <Label Text="{Binding CurrentTheme}" Style="{StaticResource labelData}" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+
+        <!-- Botones -->
+        <VerticalStackLayout Margin="30" Spacing="4">
+            <Button x:Name="btnShowSystemInfo" Text="Información Sistema" Clicked="btnShowSystemInfo_Clicked" Style="{StaticResource buttonRed}" />
+            <Button x:Name="btnRequestLocation" Text="Permiso Ubicación" Clicked="btnRequestLocation_Clicked" Style="{StaticResource buttonBase}" />
+        </VerticalStackLayout>
+
+        <!-- Sensores -->
+        <VerticalStackLayout Margin="20,40,0,0">
+            <Label Text="Orientación - Subproceso" Style="{StaticResource labelTitle}" HorizontalOptions="Center"/>
+
+            <HorizontalStackLayout>
+                <Label Text="X:"/>
+                <Label Text="0" x:Name="lbl_X" Style="{StaticResource labelData}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Y:"/>
+                <Label Text="0" x:Name="lbl_Y" Style="{StaticResource labelData}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Z:"/>
+                <Label Text="0" x:Name="lbl_Z" Style="{StaticResource labelData}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="W:"/>
+                <Label Text="0" x:Name="lbl_W" Style="{StaticResource labelData}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Tiempo:"/>
+                <Label Text="0" x:Name="lbl_T" Style="{StaticResource labelData}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Subproceso:"/>
+                <Label Text="" x:Name="lbl_S" Style="{StaticResource labelData}" />
+            </HorizontalStackLayout>
+
+            <Picker x:Name="pickerSpeed" Title="Velocidad de actualización">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Default</x:String>
+                        <x:String>UI</x:String>
+                        <x:String>Game</x:String>
+                        <x:String>Fastest</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <HorizontalStackLayout Spacing="2" HorizontalOptions="Center" Margin="0,20,0,0">
+                <Button Text="Iniciar" x:Name="btnIniciar" Clicked="btnIniciar_Clicked" Style="{StaticResource buttonBase}" />
+                <Button Text="Parar" x:Name="btnParar" Clicked="btnParar_Clicked" Style="{StaticResource buttonBase}" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

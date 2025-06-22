@@ -1,4 +1,8 @@
-﻿using System.Diagnostics;
+﻿using MauiPlanTurismo.Views.Destinations;
+using MauiPlanTurismo.Views.Info;
+using MauiPlanTurismo.Views.Travel;
+using MauiPlanTurismo.Views.User;
+using System.Diagnostics;
 
 namespace MauiPlanTurismo
 {
@@ -43,6 +47,29 @@ namespace MauiPlanTurismo
                 Debug.WriteLine("-----> Ventana Reanudada <----------------------");
             };
             return window;
+        }
+        #endregion
+
+        #region Acciones de aplicación
+        public static void HandleAppActions(AppAction appAction)
+        {
+            App.Current.Dispatcher.Dispatch(async () =>
+            {
+                var page = appAction.Id switch
+                {
+                    "nuevo_viaje" => new TravelRequest(),
+                    "info_planes_turismo" => new InfoApp(),
+                    "destino_granada" => new TabDestinyDestiny(),
+                    "datos_usuario" => new Register(),
+                    _ => default(Page)
+                };
+
+                if (page != null)
+                {
+                    await Application.Current.MainPage.Navigation.PopToRootAsync();
+                    await Application.Current.MainPage.Navigation.PushAsync(page);
+                }
+            });
         }
         #endregion
     }

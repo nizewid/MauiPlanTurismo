@@ -30,6 +30,7 @@
             <!-- <Button x:Name="btnRotate" Text="Girar" Clicked="btnRotate_Clicked" HorizontalOptions="Center"></Button> -->
             <!-- <Button x:Name="btnZoom" Text="Zoom" Clicked="btnZoom_Clicked" HorizontalOptions="Center"></Button> --> 
             <!-- <Button x:Name="btnResizeImage" Text="Ajustar Imagen" Clicked="btnResizeImg_Clicked" HorizontalOptions="Center"></Button> -->
+            <Button x:Name="btnShowSystemInfo" Text="InfoSys" Clicked="btnShowSystemInfo_Clicked"/>
             <Label Text="Animaciones" Margin="20,0,0,0">
                 </Label>
                 <HorizontalStackLayout Margin="10">
