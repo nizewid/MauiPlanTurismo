@@ -138,6 +138,12 @@
 	  <MauiXaml Update="Views\Info\InfoApp.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Info\InfoBattery.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Info\InfoCopyPaste.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Info\SystemInfo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

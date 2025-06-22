@@ -30,10 +30,14 @@
             <!-- <Button x:Name="btnRotate" Text="Girar" Clicked="btnRotate_Clicked" HorizontalOptions="Center"></Button> -->
             <!-- <Button x:Name="btnZoom" Text="Zoom" Clicked="btnZoom_Clicked" HorizontalOptions="Center"></Button> --> 
             <!-- <Button x:Name="btnResizeImage" Text="Ajustar Imagen" Clicked="btnResizeImg_Clicked" HorizontalOptions="Center"></Button> -->
-            <Button x:Name="btnShowSystemInfo" Text="InfoSys" Clicked="btnShowSystemInfo_Clicked"/>
-            <Label Text="Animaciones" Margin="20,0,0,0">
-                </Label>
-                <HorizontalStackLayout Margin="10">
+            <Label Text="Sistema" Margin="20,0,0,0"/>
+            <HorizontalStackLayout Margin="10">
+                <Button x:Name="btnShowSystemInfo" Text="InfoSys" Clicked="btnShowSystemInfo_Clicked"/>
+                <Button x:Name="btnInfoBattery" Text="InfoBat" Clicked="btnInfoBattery_Clicked"/>
+                <Button x:Name="btnInfoCopyPaste" Text="InfoCyP" Clicked="btnInfoCopyPaste_Clicked"/>
+            </HorizontalStackLayout>
+            <Label Text="Animaciones" Margin="20,0,0,0"/>
+            <HorizontalStackLayout Margin="10">
                     <Button x:Name="btnAnimationZoom" Text="Lupa" Clicked="btnAnimationZoom_Clicked"/>
                 <Button x:Name="btnAnimationPromotion" Text="Promo" Clicked="btnAnimationPromo_Clicked"/>
                 <Button x:Name="btnAnimationCar" Text="AnimCar" Clicked="btnAnimationCar_Clicked"/>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.Views.Info.InfoCopyPaste"
+             Title="InfoCopyPaste">
+    <ContentPage.Resources>
+        <Style x:Key="labelTitle" TargetType="Label">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="TextColor" Value="Navy"/>
+        </Style>
+        <Style x:Key="labelData" TargetType="Label">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="TextColor" Value="Blue"/>
+        </Style>
+        <Style x:Key="buttonBase" TargetType="Button">
+            <Setter Property="HeightRequest" Value="40"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BackgroundColor" Value="LightSteelBlue"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <Style x:Key="buttonRed" TargetType="Button" BasedOn="{StaticResource buttonBase}">
+            <Setter Property="BackgroundColor" Value="LightPink"/>
+            <Setter Property="TextColor" Value="DarkRed"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Margin="20">
+        <Label Text="Acceso al Portapaeles"
+            HorizontalOptions="Center"
+            Style="{StaticResource labelTitle}" />
+
+        <StackLayout Margin="0,10,0,0">
+            <Label Text="Texto copiar:" />
+            <Editor x:Name="txtInputCopy"
+                 Text="{Binding CopyDataValue}"
+                 HeightRequest="100"
+                 WidthRequest="280"
+                 BackgroundColor="Beige" />
+
+            <Label Text="Texto pegar:" />
+            <Editor x:Name="txtInputPaste"
+                 Text="{Binding PasteDataValue}"
+                 HeightRequest="100"
+                 WidthRequest="280"
+                 BackgroundColor="Bisque" />
+
+            <Label Text="Comprobación" Margin="0,10,0,0" />
+            <Label x:Name="lblCheck"
+                Text="{Binding CurrentValue}"
+                BackgroundColor="MistyRose"
+                Style="{StaticResource labelData}" />
+
+            <Label Text="Last Data Copied" Margin="0,10,0,0" />
+            <Label x:Name="lblLastCopied"
+                Text="{Binding LastDataCopied}"
+                BackgroundColor="Honeydew"
+                Style="{StaticResource labelData}" />
+        </StackLayout>
+
+        <HorizontalStackLayout Margin="10,30,10,10"
+                            Spacing="4"
+                            HorizontalOptions="Center">
+            <Button Text="Copiar"
+                 x:Name="btnCopy"
+                 Command="{Binding Copy}"
+                 Style="{StaticResource buttonBase}" />
+            <Button Text="Pegar"
+                 x:Name="btnPaste"
+                 Command="{Binding Paste}"
+                 Style="{StaticResource buttonRed}" />
+            <Button Text="Ver"
+                 x:Name="btnCheck"
+                 Command="{Binding Verify}"
+                 Style="{StaticResource buttonBase}" />
+            <Button Text="Limpiar"
+                 x:Name="btnClear"
+                 Command="{Binding Clean}"
+                 Style="{StaticResource buttonBase}" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

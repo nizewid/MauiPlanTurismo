@@ -10,6 +10,7 @@ public partial class InfoApp : ContentPage
 {
     private bool InitialStep = true;
     private Quaternion InitialOrientation;
+
 	public InfoApp()
 	{
 		InitializeComponent();
@@ -111,5 +112,28 @@ public partial class InfoApp : ContentPage
     private void btnShowSystemInfo_Clicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new SystemInfo());
+    }
+    private void btnInfoBattery_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new InfoBattery());
+    }
+    private void btnInfoCopyPaste_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new InfoCopyPaste());
+    }
+    private void OrientationChanged(object sender, OrientationSensorChangedEventArgs e)
+    {
+        if (InitialStep)
+        {
+            InitialOrientation = e.Reading.Orientation;
+            InitialStep = false;
+        }
+        else
+        {
+            if (Math.Abs(InitialOrientation.W - e.Reading.Orientation.W) > 0.15)
+                this.BackgroundColor = Colors.LightGreen;
+            else
+                this.BackgroundColor = Colors.LightBlue;
+        }
     }
 }

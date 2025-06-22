@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.Views.Info.InfoBattery"
+             Title="Bateria Info">
+
+    <ContentPage.Resources>
+        <Style x:Key="labelTitle" TargetType="Label">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="TextColor" Value="Navy"/>
+        </Style>
+        <Style x:Key="labelData" TargetType="Label">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="TextColor" Value="Blue"/>
+        </Style>
+        <Style x:Key="buttonBase" TargetType="Button">
+            <Setter Property="HeightRequest" Value="40"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BackgroundColor" Value="LightSteelBlue"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <Style x:Key="buttonRed" TargetType="Button" BasedOn="{StaticResource buttonBase}">
+            <Setter Property="BackgroundColor" Value="LightPink"/>
+            <Setter Property="TextColor" Value="DarkRed"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Margin="20">
+        <Label Text="Battery Information"
+               HorizontalOptions="Center"
+               Style="{StaticResource labelTitle}" />
+
+        <VerticalStackLayout Margin="0,20,0,0" Spacing="6">
+            <HorizontalStackLayout>
+                <Label Text="Nivel: " />
+                <Label Text="{Binding BatteryLevel}" Style="{StaticResource labelData}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Estado: " />
+                <Label Text="{Binding BatteryState}" Style="{StaticResource labelData}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Origen carga: " />
+                <Label Text="{Binding ChargeSource}" Style="{StaticResource labelData}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Ahorro de energia: " />
+                <Label Text="{Binding EnergySaverStatus}" Style="{StaticResource labelData}" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+
+        <HorizontalStackLayout Margin="30" Spacing="4" HorizontalOptions="Center">
+            <Button Text="Start Monitoring" 
+                    Command="{Binding StartBatteryMonitor}"
+                    Style="{StaticResource buttonRed}" />
+            <Button Text="Stop" 
+                    Command="{Binding StopBatteryMonitor}"  
+                    Style="{StaticResource buttonBase}" />
+        </HorizontalStackLayout>
+        <VerticalStackLayout HorizontalOptions="Center">
+            <Label Text="{Binding ObservationInfo}" Style="{StaticResource labelData}"/>
+            <Image Source="{Binding BatteryImage}" HeightRequest="100" Margin="20" IsVisible="{Binding ShowImage}"/>
+        </VerticalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>
