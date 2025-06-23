@@ -12,6 +12,7 @@
     xmlns:user="clr-namespace:MauiPlanTurismo.Views.User"
     xmlns:travel="clr-namespace:MauiPlanTurismo.Views.Travel"
     xmlns:gestures="clr-namespace:MauiPlanTurismo.Views.Gestures"
+    xmlns:utils="clr-namespace:MauiPlanTurismo.Views.Utils"
     FlyoutBackgroundImage="playa.jpg"
     FlyoutBackgroundImageAspect="AspectFill"
     FlyoutHeaderBehavior="CollapseOnScroll"
@@ -78,6 +79,7 @@
 
     </FlyoutItem>
 
+    <ShellContent Route="utils" Title="Utilidades" Icon="utiles.png" Style="{StaticResource DomesticShell}" ContentTemplate="{DataTemplate utils:UtilsPage}" />
     <ShellContent Route="booking" Title="Booking" Icon="destino_bn.png" Style="{StaticResource DomesticShell}" ContentTemplate="{DataTemplate options:ExternalSite}" />
     <ShellContent Route="usuario" Title="Usuario" Icon="usuario_fill.png" Style="{StaticResource DomesticShell}" ContentTemplate="{DataTemplate user:Register}" />
     <ShellContent Route="info" Title="Acerca de ..." Icon="info.png" Style="{StaticResource DomesticShell}" ContentTemplate="{DataTemplate info:InfoApp}" />

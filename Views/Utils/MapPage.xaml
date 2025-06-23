@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.Views.Utils.MapPage"
+             Title="Geolocalización">
+
+    <ContentPage.Resources>
+        <Style x:Key="labelTitle" TargetType="Label">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="TextColor" Value="Navy"/>
+        </Style>
+        <Style x:Key="labelData" TargetType="Label">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="TextColor" Value="Blue"/>
+        </Style>
+        <Style x:Key="buttonBase" TargetType="Button">
+            <Setter Property="HeightRequest" Value="40"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BackgroundColor" Value="LightSteelBlue"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <Style x:Key="buttonRed" TargetType="Button" BasedOn="{StaticResource buttonBase}">
+            <Setter Property="BackgroundColor" Value="LightPink"/>
+            <Setter Property="TextColor" Value="DarkRed"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Margin="20">
+        <StackLayout Margin="10">
+            <Label Text="País" Style="{StaticResource labelData}" />
+            <Entry Text="{Binding Country}" />
+
+            <Label Text="Código área" Style="{StaticResource labelData}" />
+            <Entry Text="{Binding ZipCode}" />
+
+            <Label Text="Ciudad" Style="{StaticResource labelData}" />
+            <Entry Text="{Binding City}" />
+
+            <Label Text="Dirección" Style="{StaticResource labelData}" />
+            <Entry Text="{Binding Address}" />
+
+            <Button Text="Buscar por Dirección"
+                    Command="{Binding OpenByAddressCommand}"
+                    Style="{StaticResource buttonBase}" />
+        </StackLayout>
+
+        <StackLayout Spacing="2" Margin="10,40,10,10">
+            <Label Text="Latitud" Style="{StaticResource labelData}" />
+            <Entry Text="{Binding Latitude}" Keyboard="Numeric" />
+
+            <Label Text="Longitud" Style="{StaticResource labelData}" />
+            <Entry Text="{Binding Longitude}" Keyboard="Numeric" />
+
+            <Button Text="Búsqueda por coordenadas"
+                    Command="{Binding OpenByCoordinatesCommand}"
+                    Style="{StaticResource buttonBase}" />
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

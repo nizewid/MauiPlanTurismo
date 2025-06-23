@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiPlanTurismo.Views.Utils.ContactsPage"
+             Title="ContactsPage">
+    
+    <ContentPage.Resources>
+        <Style x:Key="labelTitle" TargetType="Label">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="TextColor" Value="Navy"/>
+        </Style>
+        <Style x:Key="labelData" TargetType="Label">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="TextColor" Value="Blue"/>
+        </Style>
+        <Style x:Key="buttonBase" TargetType="Button">
+            <Setter Property="HeightRequest" Value="40"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BackgroundColor" Value="LightSteelBlue"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <Style x:Key="buttonRed" TargetType="Button" BasedOn="{StaticResource buttonBase}">
+            <Setter Property="BackgroundColor" Value="LightPink"/>
+            <Setter Property="TextColor" Value="DarkRed"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Margin="20">
+
+            <HorizontalStackLayout Margin="10,30,10,10" Spacing="4" HorizontalOptions="Center">
+                <Button Text="Buscar contacto" x:Name="btnSearchContact" Clicked="btnSearchContact_Clicked" Style="{StaticResource buttonRed}"/>
+                <Button Text="Listar contactos" x:Name="btnListContacts" Clicked="btnListContacts_Clicked" Style="{StaticResource buttonRed}"/>
+            </HorizontalStackLayout>
+
+            <Label  Text="Datos del contacto"  VerticalOptions="Center"   HorizontalOptions="Center" Style="{StaticResource labelTitle}"/>
+            <StackLayout Margin="20">
+                <Label Text="" x:Name="lblContactData" Style="{StaticResource labelData}"/>
+            </StackLayout>
+
+            <Label  Text="Lista de contactos"  VerticalOptions="Center"   HorizontalOptions="Center" Style="{StaticResource labelTitle}"/>
+            <StackLayout Margin="20">
+                <Label Text="" x:Name="lblContactsList" Style="{StaticResource labelData}"/>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

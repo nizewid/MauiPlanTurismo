@@ -5,6 +5,7 @@ using MauiPlanTurismo.Views.Options;
 using MauiPlanTurismo.Views.User;
 using MauiPlanTurismo.Views.Travel;
 using MauiPlanTurismo.ViewModels;
+using MauiPlanTurismo.Views.Utils;
 
 namespace MauiPlanTurismo
 {
@@ -37,6 +38,7 @@ namespace MauiPlanTurismo
             Routes.Add("viaje_solicitar", typeof(TravelRequest));
             Routes.Add("viaje_datos", typeof(DestinyCategory));
 
+            Routes.Add("Utils", typeof(UtilsPage));
             Routes.Add("booking", typeof(ExternalSite));
             Routes.Add("usuario", typeof(Register));
             Routes.Add("info", typeof(InfoApp));
